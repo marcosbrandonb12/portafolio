@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="border p-4 rounded">
+                <h1 class="text-center">Información de Contacto</h1>
+                <p class="text-center my-4">Puedes contactarme a través de:</p>
+                <ul class="list-unstyled text-center">
+                    <li>Email: ejemplo@correo.com</li>
+                    <li>Teléfono: 123-456-7890</li>
+                    <li>Dirección: 123 Calle Principal, Ciudad</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-6 text-center">
+            <a href="https://api.whatsapp.com/send?phone=1234567890" class="me-3 text-white logo-link whatsapp"><i class="fab fa-whatsapp fa-3x"></i></a>
+            <a href="https://www.facebook.com/tucuenta" class="me-3 text-white logo-link facebook"><i class="fab fa-facebook fa-3x"></i></a>
+            <a href="https://github.com/tucuenta" class="me-3 text-white logo-link github"><i class="fab fa-github fa-3x"></i></a>
+            <a href="mailto:ejemplo@correo.com" class="text-white logo-link correo"><i class="fas fa-envelope fa-3x"></i></a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .logo-link {
+        margin: 10px; /* Añade espacio alrededor de cada logo */
+        border: 3px solid #808080; /* Hace que el borde sea gris y más delgado */
+        border-radius: 50%; /* Hace que los logos sean redondos */
+        background-color: transparent; /* Color de fondo transparente */
+        padding: 20px; /* Ajusta el relleno para hacer los círculos más largos */
+        display: inline-flex; /* Usa flexbox para centrar los íconos */
+        align-items: center; /* Centra verticalmente los íconos */
+        justify-content: center; /* Centra horizontalmente los íconos */
+        transition: background-color 0.3s, box-shadow 0.3s; /* Agrega una transición suave al color de fondo y a la sombra */
+        text-decoration: none; /* Elimina la línea debajo de los íconos */
+    }
+
+    .logo-link:hover {
+        box-shadow: 0 0 10px #fff; /* Agrega una ligera sombra blanca al pasar el cursor */
+    }
+
+    .whatsapp:hover {
+        background-color: rgba(0, 255, 0, 0.3); /* Cambia el color de fondo al pasar el cursor */
+    }
+
+    .facebook:hover {
+        background-color: rgba(0, 0, 255, 0.3); /* Cambia el color de fondo al pasar el cursor */
+    }
+
+    .correo:hover {
+        background-color: rgba(255, 0, 0, 0.3); /* Cambia el color de fondo al pasar el cursor */
+    }
+</style>
+
+{% endblock %}
