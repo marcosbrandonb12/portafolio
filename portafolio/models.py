@@ -9,3 +9,11 @@ class Project(models.Model):
     description = CharField(max_length=250)
     image = ImageField(upload_to="portfolio/images")
     url = URLField(blank=True)
+
+
+class Portfolio(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    career = models.CharField(max_length=100)
+    phone = models.CharField(max_length=20)

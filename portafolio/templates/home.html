@@ -17,23 +17,32 @@
             y el trabajo en equipo, busco aplicar estos principios en entornos académicos y proyectos estudiantiles para optimizar procesos y promover resultados
             efectivos y centrados en el aprendizaje.
         </p>
+        {% if perfil %}
+            {{ perfil.first_name }}<br>
+            {{ perfil.last_name }}<br>
+            {{ perfil.email }}<br>
+            {{ perfil.career }}<br>
+            {{ perfil.phone }}<br>
+        {% else %}
+            <p>No hay perfil disponible.</p>
+        {% endif %}
         <a href="{% static 'portfolio/Junior Programmer.pdf' %}" class="btn btn-primary btn-lg rounded-0 my-3">Download CV</a>
     </div>
 </header>
 
 <div class="row my-4 text-center">
     <h3>Mis Proyectos</h3>
-    <p>Aqui encontraras los enlaces hacias mi proyectos que realize</p>
+    <p>Aqui encontraras los enlaces hacia mis proyectos que realicé</p>
 
     {% for project in projects %}
     <div class="col-md-4 p-4">
         <div class="card bg-black card-project">
-            <img src="{{project.image.url}}" alt="{{project.title}}" class="my-project-img">
+            <img src="{{ project.image.url }}" alt="{{ project.title }}" class="my-project-img">
             <div class="card-body">
                 <h2>{{ project.title }}</h2>
                 <p>{{ project.description }}</p>
                 {% if project.url %}
-                <a href="{{ project.url }}" class="btn btn-light rounded-0 btn-sm" target="_blank" rel="noopener noreferrer">Visit the Project</a>
+                    <a href="{{ project.url }}" class="btn btn-light rounded-0 btn-sm" target="_blank" rel="noopener noreferrer">Visit the Project</a>
                 {% endif %}
             </div>
         </div>
